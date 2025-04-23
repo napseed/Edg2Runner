@@ -1,5 +1,10 @@
+ï»¿using Unity.VisualScripting;
 using UnityEngine;
 
+
+/// <summary>
+///  í”Œë ˆì´ì–´ë¥¼ ì í”„í•˜ê²Œ í•´ì£¼ëŠ” í´ë˜ìŠ¤
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     public enum JumpState
@@ -38,34 +43,46 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // ë°€ì–´ì˜¬ë¦¬ê¸°ì— ëŒ€í•œ ì˜ˆì™¸ ì²˜ë¦¬ê°€ í•„ìš”í•˜ë‹¤.
+
         if (rigid.linearVelocityY < 0)
         {
             Vector2 bottomLeft = new Vector2(col.bounds.min.x, col.bounds.min.y);
+            Vector2 bottomRight = new Vector2(col.bounds.max.x, col.bounds.min.y);
 
-            RaycastHit2D rHit = Physics2D.Raycast(bottomLeft, Vector2.down, 0.1f, LayerMask.GetMask("Platform"));
-            
-            // ÂøÁö
-            if (rHit.collider != null)
+            RaycastHit2D lHit = Physics2D.Raycast(bottomLeft, Vector2.down, 0.1f, LayerMask.GetMask("Platform"));
+            RaycastHit2D rHit = Physics2D.Raycast(bottomRight, Vector2.down, 0.1f, LayerMask.GetMask("Platform"));
+
+
+            // ì°©ì§€
+            if (lHit.collider != null || rHit.collider != null)
             {
                 jumpState = JumpState.Landed;
             }
-            // Á¡ÇÁ ¸·±â
+
+            // ì í”„ ë§‰ê¸°
             else if (jumpState == JumpState.Djumped)
             {
                 jumpState = JumpState.Falled;
             }
-            // ¶³¾îÁø´Ù¸é Á¡ÇÁ ÇÑ¹øÀº Çã¿ë
+            // ë–¨ì–´ì§„ë‹¤ë©´ ì í”„ í•œë²ˆì€ í—ˆìš©
             else if (jumpState == JumpState.Landed)
             {
                 jumpState = JumpState.Jumped;
             }
         }
+
     }
 
     void Jump()
     {
         rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         Debug.Log($"{jumpState}");
+    }
+
+    public void FreeGravity()
+    {
+        rigid.linearVelocityY = 0.0f;
     }
 
     public void PlayerJump()

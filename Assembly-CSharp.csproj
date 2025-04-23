@@ -61,7 +61,12 @@
     <Analyzer Include="Z:\Unity\6000.0.41f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\Scripts\UI\WeaponUI.cs" />
+    <Compile Include="Assets\Resources\Scripts\Objects\Mover.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Resources\Scripts\Managers\TerrainManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Player\PlayerShooter.cs" />
+    <Compile Include="Assets\Resources\Scripts\Objects\KillZone.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\Player.cs" />
   </ItemGroup>
   <ItemGroup>
