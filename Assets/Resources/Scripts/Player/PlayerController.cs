@@ -43,25 +43,23 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 밀어올리기에 대한 예외 처리가 필요하다.
+        Vector2 bottomLeft = new Vector2(col.bounds.min.x, col.bounds.min.y);
+        Vector2 bottomRight = new Vector2(col.bounds.max.x, col.bounds.min.y);
+
+        RaycastHit2D lHit = Physics2D.Raycast(bottomLeft, Vector2.down, 0.1f, LayerMask.GetMask("PlatformCollider"));
+        RaycastHit2D rHit = Physics2D.Raycast(bottomRight, Vector2.down, 0.1f, LayerMask.GetMask("PlatformCollider"));
+
 
         if (rigid.linearVelocityY < 0)
         {
-            Vector2 bottomLeft = new Vector2(col.bounds.min.x, col.bounds.min.y);
-            Vector2 bottomRight = new Vector2(col.bounds.max.x, col.bounds.min.y);
-
-            RaycastHit2D lHit = Physics2D.Raycast(bottomLeft, Vector2.down, 0.1f, LayerMask.GetMask("Platform"));
-            RaycastHit2D rHit = Physics2D.Raycast(bottomRight, Vector2.down, 0.1f, LayerMask.GetMask("Platform"));
-
-
             // 착지
-            if (lHit.collider != null || rHit.collider != null)
-            {
-                jumpState = JumpState.Landed;
-            }
+            //if (lHit.collider != null || rHit.collider != null)
+            //{
+
+            //}
 
             // 점프 막기
-            else if (jumpState == JumpState.Djumped)
+            if (jumpState == JumpState.Djumped)
             {
                 jumpState = JumpState.Falled;
             }
@@ -72,6 +70,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (rigid.linearVelocityY == 0 && (lHit.collider != null || rHit.collider != null) && jumpState != JumpState.Landed)
+        {
+            Debug.Log("Force Landing");
+            jumpState = JumpState.Landed;
+        }
     }
 
     void Jump()
