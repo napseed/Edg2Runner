@@ -64,7 +64,9 @@
     <Compile Include="Assets\Resources\Scripts\UI\WeaponUI.cs" />
     <Compile Include="Assets\Resources\Scripts\Objects\Mover.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\FPS.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\TerrainManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Player\PlayerEdgeCollider.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerShooter.cs" />
     <Compile Include="Assets\Resources\Scripts\Objects\KillZone.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\Player.cs" />

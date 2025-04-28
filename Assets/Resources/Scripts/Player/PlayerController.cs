@@ -15,14 +15,16 @@ public class PlayerController : MonoBehaviour
         Falled,
     }
 
-    [SerializeField]
-    private JumpState jumpState;
+
+    public JumpState jumpState;
 
     private Rigidbody2D rigid;
     private Collider2D col;
 
     [SerializeField]
     private float jumpForce;
+    [SerializeField]
+    private int jumpCount = 0;
 
     private void Awake()
     {
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         jumpState = JumpState.Landed;
-        
+        ResetJump();
     }
 
     void Update()
@@ -46,41 +48,49 @@ public class PlayerController : MonoBehaviour
         Vector2 bottomLeft = new Vector2(col.bounds.min.x, col.bounds.min.y);
         Vector2 bottomRight = new Vector2(col.bounds.max.x, col.bounds.min.y);
 
-        RaycastHit2D lHit = Physics2D.Raycast(bottomLeft, Vector2.down, 0.1f, LayerMask.GetMask("PlatformCollider"));
-        RaycastHit2D rHit = Physics2D.Raycast(bottomRight, Vector2.down, 0.1f, LayerMask.GetMask("PlatformCollider"));
+        RaycastHit2D lHit = Physics2D.Raycast(bottomLeft, Vector2.down, 1.0f, LayerMask.GetMask("PlatformCollider"));
+        RaycastHit2D rHit = Physics2D.Raycast(bottomRight, Vector2.down, 1.0f, LayerMask.GetMask("PlatformCollider"));
 
-
-        if (rigid.linearVelocityY < 0)
+        if (rigid.linearVelocityY < 0 && (lHit.collider == null && rHit.collider == null))
         {
-            // 착지
-            //if (lHit.collider != null || rHit.collider != null)
-            //{
-
-            //}
-
-            // 점프 막기
-            if (jumpState == JumpState.Djumped)
+            if (jumpCount == 0)
             {
-                jumpState = JumpState.Falled;
+                ChangeState("Fall");
+                jumpCount++;
             }
-            // 떨어진다면 점프 한번은 허용
-            else if (jumpState == JumpState.Landed)
-            {
-                jumpState = JumpState.Jumped;
-            }
-        }
-
-        if (rigid.linearVelocityY == 0 && (lHit.collider != null || rHit.collider != null) && jumpState != JumpState.Landed)
-        {
-            Debug.Log("Force Landing");
-            jumpState = JumpState.Landed;
         }
     }
+
+    public void ResetJump()
+    {
+        jumpCount = 0;
+    }
+
+    public void ChangeState(string param)
+    {
+        switch (param)
+        {
+            case "Land":
+                jumpState = JumpState.Landed;
+                break;
+             case "Jump":
+                jumpState = JumpState.Jumped;
+                break;
+                case "Djump":
+                jumpState = JumpState.Djumped;
+                break;
+                case "Fall":
+                jumpState = JumpState.Falled;
+                break;
+        }
+
+    }
+
 
     void Jump()
     {
         rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        Debug.Log($"{jumpState}");
+        jumpCount++;
     }
 
     public void FreeGravity()
@@ -90,20 +100,23 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerJump()
     {
-        switch(jumpState)
+        switch (jumpCount)
         {
-            case JumpState.Landed:
+            case 0:
                 Jump();
-                jumpState = JumpState.Jumped;
+                ChangeState("Jump");
                 break;
-            case JumpState.Jumped:
+            case 1:
                 rigid.linearVelocityY = 0;
                 Jump();
-                jumpState = JumpState.Djumped;
+                ChangeState("Djump");
                 break;
-            case JumpState.Djumped:
-                Debug.Log("Jump not available");
+            case 2:
+                Debug.Log("No more jump");
+                break;
+            default:
                 break;
         }
+
     }
 }
