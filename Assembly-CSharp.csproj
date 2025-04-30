@@ -63,12 +63,16 @@
   <ItemGroup>
     <Compile Include="Assets\Resources\Scripts\UI\WeaponUI.cs" />
     <Compile Include="Assets\Resources\Scripts\Objects\Mover.cs" />
+    <Compile Include="Assets\Resources\Scripts\Player\PlayerWeapon.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\FPS.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\TerrainManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerEdgeCollider.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerShooter.cs" />
+    <Compile Include="Assets\Resources\Scripts\Player\BulletDefault.cs" />
     <Compile Include="Assets\Resources\Scripts\Objects\KillZone.cs" />
+    <Compile Include="Assets\Resources\Scripts\Player\PlayerBullet.cs" />
+    <Compile Include="Assets\Resources\Scripts\Player\WeaponDefault.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\Player.cs" />
   </ItemGroup>
   <ItemGroup>
