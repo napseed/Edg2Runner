@@ -13,11 +13,11 @@ TagManager:
   - UI
   - Platform
   - PlatformCollider
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BulletDestroyer
+  - Bullet
+  - Enemy
+  - Player
+  - DestructableObject
   - 
   - 
   - 
