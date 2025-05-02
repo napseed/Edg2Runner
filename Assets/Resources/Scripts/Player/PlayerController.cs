@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 /// <summary>
-///  플레이어를 점프하게 해주는 클래스
+///  플레이어 조작을 다루는 클래스
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rigid;
     private Collider2D col;
+    private SpriteRenderer sr;
+    private BoxCollider2D box;
 
     [SerializeField]
     private float jumpForce;
@@ -30,6 +32,8 @@ public class PlayerController : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        sr = GetComponent<SpriteRenderer>();
+        box = GetComponent<BoxCollider2D>();
     }
 
     void Start()
@@ -86,6 +90,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // 슬라이드를 하면 플레이어의 스프라이트렌더러와 박스 콜라이더를 비활성화
+    void Slide()
+    {
+        
+    }
 
     void Jump()
     {

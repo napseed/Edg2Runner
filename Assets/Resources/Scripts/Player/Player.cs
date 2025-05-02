@@ -28,4 +28,17 @@ public class Player : MonoBehaviour
     {
         return player;
     }
+
+    private void OnDrawGizmos()
+    {
+        //BoxCollider2D col = GetComponent<BoxCollider2D>();
+        //if (col != null)
+        //{
+        //    Gizmos.color = Color.red;
+        //    Vector3 pos = col.transform.position + (Vector3)col.offset;
+        //    Vector3 size = new Vector3(col.size.x, col.size.y, 0f);
+        //    Gizmos.matrix = col.transform.localToWorldMatrix;
+        //    Gizmos.DrawWireCube(col.offset, col.size);
+        //}
+    }
 }
