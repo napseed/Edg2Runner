@@ -9,7 +9,7 @@ public class KillZone : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        player = Player.Instance;
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class KillZone : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("플레이어가 죽었다");
-        player.GetComponent<PlayerController>().FreeGravity();
+        player.GetComponent<Player>().FreeGravity();
         player.transform.position = rPoint.transform.position;
     }
 }

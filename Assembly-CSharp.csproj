@@ -61,11 +61,10 @@
     <Analyzer Include="Z:\Unity\6000.0.41f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Resources\Scripts\UI\WeaponUI.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\BulletDefault.cs" />
     <Compile Include="Assets\Resources\Scripts\Objects\Mover.cs" />
-    <Compile Include="Assets\Resources\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\FPS.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\SlideButton.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\PlayerWeapon.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\BulletPool.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\TerrainManager.cs" />

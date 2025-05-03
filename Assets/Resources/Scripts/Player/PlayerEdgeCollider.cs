@@ -1,16 +1,16 @@
 using UnityEngine;
-using static PlayerController;
+using static Player;
 
 public class PlayerEdgeCollider : MonoBehaviour
 {
-    public PlayerController player;
+    public Player player;
     public int platformLayer;
     public Rigidbody2D rg;
 
 
     private void Awake()
     {
-        player = transform.parent.GetComponent<PlayerController>();
+        player = transform.parent.GetComponent<Player>();
         platformLayer = LayerMask.NameToLayer("PlatformCollider");
         rg = player.GetComponent<Rigidbody2D>();
     }
