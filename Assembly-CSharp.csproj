@@ -69,6 +69,7 @@
     <Compile Include="Assets\Resources\Scripts\Weapon\BulletPool.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\TerrainManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerEdgeCollider.cs" />
+    <Compile Include="Assets\Resources\Scripts\Managers\SoundManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\PlayerBullet.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerShooter.cs" />
     <Compile Include="Assets\Resources\Scripts\Objects\KillZone.cs" />

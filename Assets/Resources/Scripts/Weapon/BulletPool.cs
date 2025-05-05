@@ -9,7 +9,6 @@ public class BulletPool : MonoBehaviour
     public GameObject bulletPrefab;
     public int poolSize;
     private GameObject[] bullets;
-    //private int idx = 0;
 
     public void InitPool()
     {
