@@ -44,8 +44,8 @@ MonoBehaviour:
       bypassVoiceEffects: 0
       bypassListenerEffects: 0
       volumeExpand: 1
-      volumeDecibel: 0
-      volumeRatio: 1
+      volumeDecibel: -11
+      volumeRatio: 0.2818383
       volumeRandomEnable: 0
       volumeRandomRangeDecibel: -3
       volumeDistanceRolloff: -2
@@ -161,19 +161,19 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       pitchExpand: 0
-      pitchSemitone: 0
-      pitchRatio: 1
-      pitchRandomEnable: 1
-      pitchRandomRangeSemitoneBipolar: 0.25
-      pitchIntensityEnable: 0
-      pitchIntensityLowSemitone: -12
-      pitchIntensityLowRatio: 0.5
-      pitchIntensityHighSemitone: 12
-      pitchIntensityHighRatio: 2
-      pitchIntensityBaseRatio: 0.5
-      pitchIntensityBaseSemitone: -12
-      pitchIntensityRangeSemitone: 24
-      pitchIntensityRangeRatio: 4
+      pitchSemitone: -10
+      pitchRatio: 0.5612308
+      pitchRandomEnable: 0
+      pitchRandomRangeSemitoneBipolar: 0.5
+      pitchIntensityEnable: 1
+      pitchIntensityLowSemitone: 0
+      pitchIntensityLowRatio: 1
+      pitchIntensityHighSemitone: 2
+      pitchIntensityHighRatio: 1.1224622
+      pitchIntensityBaseRatio: 1
+      pitchIntensityBaseSemitone: 0
+      pitchIntensityRangeSemitone: 2
+      pitchIntensityRangeRatio: 1.1224622
       pitchIntensityRolloff: 0
       pitchIntensityCurve:
         serializedVersion: 2

@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using Sonity;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -49,6 +50,10 @@ public class Player : MonoBehaviour
     private Collider2D col;
     public Animator anim;
     SoundManager sm;
+
+    public SoundEvent slideSound;
+    public SoundEvent jumpSound;
+    public SoundEvent dJumpSound;
 
     [SerializeField]
     private float jumpForce;
@@ -138,7 +143,7 @@ public class Player : MonoBehaviour
 
     public void Slide()
     {
-        
+        sm.PlaySFX(slideSound);
     }
 
     void Jump()
@@ -158,11 +163,13 @@ public class Player : MonoBehaviour
         {
             case 0:
                 Jump();
+                sm.PlaySFX(jumpSound);
                 ChangeState("Jump");
                 break;
             case 1:
                 rigid.linearVelocityY = 0;
                 Jump();
+                sm.PlaySFX(dJumpSound);
                 ChangeState("Djump");
                 break;
             case 2:

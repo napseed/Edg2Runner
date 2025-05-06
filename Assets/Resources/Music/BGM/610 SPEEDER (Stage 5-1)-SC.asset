@@ -33,7 +33,7 @@ MonoBehaviour:
       randomStartPositionMax: 1
       startPosition: 0
       reverse: 0
-      neverStealVoice: 0
+      neverStealVoice: 1
       neverStealVoiceEffects: 0
       lockAxisEnable: 0
       lockAxis: 2

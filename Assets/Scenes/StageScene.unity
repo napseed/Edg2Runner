@@ -2948,6 +2948,9 @@ MonoBehaviour:
   player: {fileID: 0}
   jumpState: 0
   anim: {fileID: 0}
+  slideSound: {fileID: 11400000, guid: 7454678b9d762d54fbb5223bf29d64c5, type: 2}
+  jumpSound: {fileID: 11400000, guid: cf2be72363519144095faadf4f4c3a2e, type: 2}
+  dJumpSound: {fileID: 11400000, guid: 9c387407fd2a32446a38df2a01c9849f, type: 2}
   jumpForce: 15
   jumpCount: 0
 --- !u!95 &1735005938
