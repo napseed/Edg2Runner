@@ -83,7 +83,7 @@ namespace Sonity.Internal {
             // Needed for disabling domain reloading. If the current SoundManager is removed, then find any other one.
             if (Instance == this) {
                 Instance = null;
-                SoundManagerBase tempSoundManagerBase = UnityEngine.Object.FindObjectOfType<SoundManagerBase>();
+                SoundManagerBase tempSoundManagerBase = UnityEngine.Object.FindFirstObjectByType<SoundManagerBase>();
                 if (tempSoundManagerBase != null) {
                     tempSoundManagerBase.InstanceCheck();
                 }

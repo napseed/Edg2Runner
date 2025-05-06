@@ -47,9 +47,8 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rigid;
     private Collider2D col;
-    private SpriteRenderer sr;
     public Animator anim;
-
+    SoundManager sm;
 
     [SerializeField]
     private float jumpForce;
@@ -108,8 +107,8 @@ public class Player : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-        sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        sm = SoundManager.Instance;
     }
 
     public void ResetJump()

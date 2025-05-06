@@ -164,7 +164,7 @@ namespace Sonity.Internal {
 
         public void FindAudioListener() {
             if (cachedAudioListener == null || !cachedAudioListener.isActiveAndEnabled) {
-                cachedAudioListener = UnityEngine.Object.FindObjectOfType<AudioListener>();
+                cachedAudioListener = UnityEngine.Object.FindFirstObjectByType<AudioListener>();
                 if (cachedAudioListener == null) {
                     if (ShouldDebug.Warnings()) {
                         Debug.LogWarning(
@@ -183,7 +183,7 @@ namespace Sonity.Internal {
         private void FindAudioListenerDistance() {
             if (settings.overrideListenerDistance) {
                 if (cachedAudioListenerDistance == null || !cachedAudioListenerDistance.isActiveAndEnabled) {
-                    cachedAudioListenerDistance = UnityEngine.Object.FindObjectOfType<AudioListenerDistanceBase>();
+                    cachedAudioListenerDistance = UnityEngine.Object.FindFirstObjectByType<AudioListenerDistanceBase>();
                     if (cachedAudioListenerDistance == null) {
                         if (ShouldDebug.Warnings()) {
                             Debug.LogWarning(
