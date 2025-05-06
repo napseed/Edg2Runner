@@ -105,6 +105,7 @@ MonoBehaviour:
   fireTerm: 0.48
   pool: {fileID: 0}
   firePos: {fileID: 6123235877540179800}
+  fireSfx: {fileID: 11400000, guid: e1e8df1c3920cd74c9aca8ca9ba8bdf0, type: 2}
 --- !u!1 &6123235877540179800
 GameObject:
   m_ObjectHideFlags: 0

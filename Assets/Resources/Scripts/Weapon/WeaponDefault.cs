@@ -1,3 +1,4 @@
+using Sonity;
 using System.Collections;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ public class WeaponDefault : PlayerWeapon
 {
     public BulletPool pool;
     public GameObject firePos;
+    public SoundEvent fireSfx;
+    SoundManager sm;
 
     [SerializeField]
     private Coroutine fireCor;
@@ -12,6 +15,8 @@ public class WeaponDefault : PlayerWeapon
     public void InitWeapon()
     {
         Debug.Log("기본 무기를 이닛합니다");
+        sm = SoundManager.Instance;
+
         fireCor = StartCoroutine(FireCor());
     }
 
@@ -48,6 +53,7 @@ public class WeaponDefault : PlayerWeapon
         bullet = pool.GetBullet();
         if (bullet != null)
         {
+            sm.PlaySFX(fireSfx);
             bullet.transform.position = firePos.transform.position;
         }
 
