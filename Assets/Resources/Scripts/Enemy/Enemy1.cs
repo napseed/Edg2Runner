@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public class Enemy1 : Enemy
 {
     [SerializeField]
-    protected float bulletSpeed = 0.0f;
-    [SerializeField]
-    protected int bulletDamage = 1;
+    private int HPpoint = 1;
+
+
+    private void Awake()
+    {
+
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        HP = HPpoint;
     }
 
     // Update is called once per frame
@@ -19,8 +23,4 @@ public class PlayerBullet : MonoBehaviour
         
     }
 
-    public int Damage()
-    {
-        return bulletDamage;
-    }
 }

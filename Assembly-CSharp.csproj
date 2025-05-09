@@ -66,12 +66,14 @@
     <Compile Include="Assets\Resources\Scripts\Objects\Mover.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\FPS.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\SlideButton.cs" />
+    <Compile Include="Assets\Resources\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Resources\Scripts\Stages\Stage1.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\PlayerWeapon.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\BulletPool.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\TerrainManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerEdgeCollider.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\SoundManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\Enemy\Enemy1.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\PlayerBullet.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerShooter.cs" />
     <Compile Include="Assets\Resources\Scripts\Objects\KillZone.cs" />

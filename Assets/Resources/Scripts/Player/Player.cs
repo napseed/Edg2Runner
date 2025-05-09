@@ -1,4 +1,6 @@
 ﻿using Sonity;
+using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,32 +10,37 @@ using UnityEngine;
 /// </summary>
 public class Player : MonoBehaviour
 {
+
+    // 플레이어 초기화 이벤트
+    public static event Action<Player> OnPlayerInit;
+
     // 싱글턴
     private static Player instance;
 
     // get하는 프로퍼티
-    public static Player Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindFirstObjectByType<Player>();
-                if (instance == null)
-                {
-                    GameObject player = new GameObject(typeof(Player).Name);
-                    instance = player.AddComponent<Player>();
+    public static Player Instance => instance;
+    //{
+    //    get
+    //    {
+    //        if (instance == null)
+    //        {
+    //            instance = FindFirstObjectByType<Player>();
+    //            if (instance == null)
+    //            {
+    //                GameObject player = new GameObject(typeof(Player).Name);
+    //                instance = player.AddComponent<Player>();
 
-                    DontDestroyOnLoad(player);
-                }
-            }
-            return instance;
-        }
-    }
+    //                DontDestroyOnLoad(player);
+    //            }
+    //        }
+    //        return instance;
+    //    }
+    //}
 
     [SerializeField]
     Player player;
-
+    [SerializeField]
+    private float HP = 10.0f;
 
     public enum JumpState
     {
@@ -54,11 +61,13 @@ public class Player : MonoBehaviour
     public SoundEvent slideSound;
     public SoundEvent jumpSound;
     public SoundEvent dJumpSound;
+    public SoundEvent dmgSound;
 
     [SerializeField]
     private float jumpForce;
     [SerializeField]
     private int jumpCount = 0;
+
 
     private void Awake()
     {
@@ -68,13 +77,11 @@ public class Player : MonoBehaviour
             Debug.Log(gameObject.name + "destroyed");
             return;
         }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-            Debug.Log("Player called on " + gameObject.name);
-        }
 
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+        Debug.Log("Player called on " + gameObject.name);
+        OnPlayerInit?.Invoke(this);
     }
 
     void Start()
@@ -178,6 +185,25 @@ public class Player : MonoBehaviour
             default:
                 break;
         }
+
+    }
+
+    public void GetDamage(int val)
+    {
+        anim.SetBool("bHit", true);
+        HP -= val;
+        sm.PlaySFX(dmgSound);
+        Debug.Log($"HP is dereased by {val}. remain HP : {HP}");
+        CheckDeath();
+    }
+
+    public void RecoverHit()
+    {
+        anim.SetBool("bHit", false);
+    }
+
+    void CheckDeath()
+    {
 
     }
 }

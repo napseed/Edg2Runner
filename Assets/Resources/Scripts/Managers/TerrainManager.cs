@@ -13,16 +13,23 @@ public class TerrainManager : MonoBehaviour
     //float elapsedTime = 0.0f;
     [SerializeField]
     float spawnTerm = 2.0f;
+    public float enemyOffset = 3.5f;
 
     void Start()
     {
         InvokeRepeating(nameof(SpawnPlane), 0f, spawnTerm);
+        InvokeRepeating(nameof(SpawnEnemy), 0f, spawnTerm);
     }
 
     void Update()
     {
         
 
+    }
+
+    void SpawnEnemy()
+    {
+        Instantiate(terrains[1], transform.position + new Vector3(0, enemyOffset, 0), Quaternion.identity);
     }
 
     void SpawnPlane()
