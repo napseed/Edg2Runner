@@ -3373,6 +3373,10 @@ MonoBehaviour:
   dmgSound: {fileID: 11400000, guid: f5e1b74c9b5fee14fba340e09b0cacfc, type: 2}
   jumpForce: 15
   jumpCount: 0
+  pWeapons:
+  - {fileID: 5820014564028580205, guid: 7eafa30440abf4247b0123f6f16c8cf4, type: 3}
+  primary: {fileID: 169040326}
+  secondary: {fileID: 543724043}
 --- !u!95 &1735005938
 Animator:
   serializedVersion: 7

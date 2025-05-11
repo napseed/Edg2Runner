@@ -1,6 +1,7 @@
 ﻿using Sonity;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -68,6 +69,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int jumpCount = 0;
 
+    // 플레이어 무기 리스트
+    public List<GameObject> pWeapons = new List<GameObject>();
+    [SerializeField]
+    private GameObject primary;
+    [SerializeField]
+    private GameObject secondary;
 
     private void Awake()
     {
@@ -205,5 +212,20 @@ public class Player : MonoBehaviour
     void CheckDeath()
     {
 
+    }
+
+    public void AddWeapon(GameObject weapon)
+    {
+        pWeapons.Add(weapon);
+        return;
+    }
+
+    public void AttachPrimaryWeapon(GameObject child)
+    {
+        child.transform.SetParent(primary.transform);
+    }
+    public void AttachSecondaryWeapon(GameObject child)
+    {
+        child.transform.SetParent(secondary.transform);
     }
 }
