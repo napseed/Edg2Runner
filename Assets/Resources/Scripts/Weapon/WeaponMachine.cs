@@ -2,19 +2,20 @@ using Sonity;
 using System.Collections;
 using UnityEngine;
 
-public class WeaponDefault : PlayerWeapon
+public class WeaponMachine : PlayerWeapon
 {
     public BulletPool pool;
     public GameObject firePos;
     public SoundEvent fireSfx;
+    public int maxMag;
+    public float interval;
     SoundManager sm;
 
-    [SerializeField]
     private Coroutine fireCor;
 
     public override void InitWeapon()
     {
-        Debug.Log("기본 무기를 이닛합니다");
+        Debug.Log("기관총 무기를 이닛합니다");
         sm = SoundManager.Instance;
 
         fireCor = StartCoroutine(FireCor());
@@ -22,8 +23,9 @@ public class WeaponDefault : PlayerWeapon
 
     private void OnEnable()
     {
-        
+
     }
+
 
     private void OnDisable()
     {
@@ -33,7 +35,7 @@ public class WeaponDefault : PlayerWeapon
         }
     }
 
-    void Update()
+    private void Update()
     {
         
     }
@@ -47,15 +49,16 @@ public class WeaponDefault : PlayerWeapon
         }
     }
 
-    // 발사
     public override void BurstWeapon()
     {
-        bullet = pool.GetBullet();
-        if (bullet != null)
+        for (int i = 0; i < maxMag; i++)
         {
-            sm.PlaySFX(fireSfx);
-            bullet.transform.position = firePos.transform.position;
+            bullet = pool.GetBullet();
+            if (bullet != null)
+            {
+                sm.PlaySFX(fireSfx);
+                bullet.transform.position = firePos.transform.position;
+            }
         }
-
     }
 }

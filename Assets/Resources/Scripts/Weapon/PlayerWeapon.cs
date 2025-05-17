@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -12,16 +13,18 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField]
     protected float fireTerm;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public virtual void InitWeapon()
     {
-        
+        return;
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual IEnumerator FireCor()
     {
-        
+        yield return null;
     }
 
+    public virtual void BurstWeapon()
+    {
+        return;
+    }
 }

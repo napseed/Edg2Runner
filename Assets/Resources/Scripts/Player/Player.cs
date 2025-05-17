@@ -69,12 +69,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int jumpCount = 0;
 
-    // 플레이어 무기 리스트
-    public List<GameObject> pWeapons = new List<GameObject>();
-    [SerializeField]
-    private GameObject primary;
-    [SerializeField]
-    private GameObject secondary;
 
     private void Awake()
     {
@@ -214,18 +208,7 @@ public class Player : MonoBehaviour
 
     }
 
-    public void AddWeapon(GameObject weapon)
-    {
-        pWeapons.Add(weapon);
-        return;
-    }
 
-    public void AttachPrimaryWeapon(GameObject child)
-    {
-        child.transform.SetParent(primary.transform);
-    }
-    public void AttachSecondaryWeapon(GameObject child)
-    {
-        child.transform.SetParent(secondary.transform);
-    }
+
+
 }

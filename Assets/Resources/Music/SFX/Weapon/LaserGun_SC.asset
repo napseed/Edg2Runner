@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e444e5f947e2a7409a1eaa10f9fa16e, type: 3}
-  m_Name: DefaultGun_SC
+  m_Name: LaserGun_SC
   m_EditorClassIdentifier: 
   internals:
     data:
       foundReferences: []
       previewAudioMixerGroup: {fileID: 0}
       expandPreview: 0
-      expandAudioClips: 0
-      expandSettings: 1
+      expandAudioClips: 1
+      expandSettings: 0
       previewCurves: 1
       audioMixerGroup: {fileID: 0}
       priority: 0.5
-      distanceEnabled: 0
+      distanceEnabled: 1
       distanceScale: 100
       preventEndClicks: 1
       loopEnabled: 0
@@ -44,8 +44,8 @@ MonoBehaviour:
       bypassVoiceEffects: 0
       bypassListenerEffects: 0
       volumeExpand: 1
-      volumeDecibel: -11
-      volumeRatio: 0.2818383
+      volumeDecibel: -8
+      volumeRatio: 0.39810717
       volumeRandomEnable: 0
       volumeRandomRangeDecibel: -3
       volumeDistanceRolloff: -2
@@ -161,19 +161,19 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       pitchExpand: 0
-      pitchSemitone: -10
-      pitchRatio: 0.5612308
-      pitchRandomEnable: 0
-      pitchRandomRangeSemitoneBipolar: 0.5
-      pitchIntensityEnable: 1
-      pitchIntensityLowSemitone: 0
-      pitchIntensityLowRatio: 1
-      pitchIntensityHighSemitone: 2
-      pitchIntensityHighRatio: 1.1224622
-      pitchIntensityBaseRatio: 1
-      pitchIntensityBaseSemitone: 0
-      pitchIntensityRangeSemitone: 2
-      pitchIntensityRangeRatio: 1.1224622
+      pitchSemitone: 0
+      pitchRatio: 1
+      pitchRandomEnable: 1
+      pitchRandomRangeSemitoneBipolar: 0.25
+      pitchIntensityEnable: 0
+      pitchIntensityLowSemitone: -12
+      pitchIntensityLowRatio: 0.5
+      pitchIntensityHighSemitone: 12
+      pitchIntensityHighRatio: 2
+      pitchIntensityBaseRatio: 0.5
+      pitchIntensityBaseSemitone: -12
+      pitchIntensityRangeSemitone: 24
+      pitchIntensityRangeRatio: 4
       pitchIntensityRolloff: 0
       pitchIntensityCurve:
         serializedVersion: 2
@@ -647,4 +647,4 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     audioClips:
-    - {fileID: 8300000, guid: d4a7ddf0289173c419fb8a0343048426, type: 3}
+    - {fileID: 8300000, guid: 493d054eb89faa64096d67ca5ff11e85, type: 3}

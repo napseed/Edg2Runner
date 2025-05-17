@@ -7,7 +7,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public LayerMask bulletMask;
-    protected int HP;
+    protected float HP;
     public int DMG;
     public Sprite damagedSprite;
     protected SpriteRenderer sr;
@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
     {
         if (((1 << collision.gameObject.layer) & bulletMask.value) != 0)
         {
-            Debug.Log($"{gameObject.name} is hit by bullet");
+            Debug.Log($"{gameObject.name} is hit by {collision.gameObject}");
             HP -= collision.gameObject.GetComponent<PlayerBullet>().Damage();
             CheckDeath();
         }
@@ -60,6 +60,7 @@ public class Enemy : MonoBehaviour
         {
             DestroyBox();
             player.GetDamage(DMG);
+            Debug.Log($"player is hit by {gameObject}");
         }
     }
 

@@ -5,7 +5,7 @@ public class PlayerBullet : MonoBehaviour
     [SerializeField]
     protected float bulletSpeed = 0.0f;
     [SerializeField]
-    protected int bulletDamage = 1;
+    protected float bulletDamage = 0.0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +19,7 @@ public class PlayerBullet : MonoBehaviour
         
     }
 
-    public int Damage()
+    public float Damage()
     {
         return bulletDamage;
     }
