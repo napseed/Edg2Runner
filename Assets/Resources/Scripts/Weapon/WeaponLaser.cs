@@ -29,6 +29,11 @@ public class WeaponLaser : PlayerWeapon
         
     }
 
+    private void OnEnable()
+    {
+        InitWeapon();
+    }
+
     public override IEnumerator FireCor()
     {
         while (true)

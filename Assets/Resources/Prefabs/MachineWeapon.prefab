@@ -101,11 +101,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1feb256bb6d3b334cb00778b468bf08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 2953804028672940621, guid: e64cec90a5f5ee84891e895c75fcf9ba, type: 3}
   fireTerm: 0
+  targetPoolID: M
   pool: {fileID: 0}
   firePos: {fileID: 7631871743578743228}
   fireSfx: {fileID: 11400000, guid: b41ecc99a1e26db4191b699400c79120, type: 2}
+  magCount: 7
+  interval: 0.1
+  coolDown: 1
+  curState: 0
 --- !u!1 &7631871743578743228
 GameObject:
   m_ObjectHideFlags: 0

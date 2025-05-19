@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -6,6 +8,10 @@ using UnityEngine;
 /// </summary>
 public class BulletPool : MonoBehaviour
 {
+    public event Action<BulletPool> OnBulletPoolInit;
+    public string poolID;
+    public static Dictionary<string, BulletPool> Pools = new();
+
     public GameObject bulletPrefab;
     public int poolSize;
     private GameObject[] bullets;
@@ -22,9 +28,15 @@ public class BulletPool : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Awake()
     {
-        
+        InitPool();
+        Pools[poolID] = this;
+    }
+
+    private void Start()
+    {
+        OnBulletPoolInit?.Invoke(this);
     }
 
     public GameObject GetBullet()

@@ -1069,9 +1069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62dda8f30ee5a984c9a9cdea53c4d496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 694328732}
-  weaponDefault: {fileID: 996099420}
-  weaponLaser: {fileID: 2005686757}
+  Dpool: {fileID: 694328732}
+  Mpool: {fileID: 1223480935}
 --- !u!4 &531542016
 Transform:
   m_ObjectHideFlags: 0
@@ -1118,6 +1117,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2005686755}
+  - {fileID: 1802936473}
   m_Father: {fileID: 1735005934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &543724045
@@ -1333,6 +1333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7060b9dcc056ab4a8e3b6daa0126502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolID: D
   bulletPrefab: {fileID: 3773547917338088312, guid: d4a3ffab4a1fbf24b991a1e45c4fb9a3, type: 3}
   poolSize: 15
 --- !u!4 &694328733
@@ -1985,17 +1986,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &996099420 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3334847892956916914, guid: 7eafa30440abf4247b0123f6f16c8cf4, type: 3}
-  m_PrefabInstance: {fileID: 8137804217107183485}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fef2891494ae40a40b2584dde35a4e28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &996099422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1057609160340278746, guid: 7eafa30440abf4247b0123f6f16c8cf4, type: 3}
@@ -2439,6 +2429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7060b9dcc056ab4a8e3b6daa0126502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poolID: M
   bulletPrefab: {fileID: 2953804028672940621, guid: e64cec90a5f5ee84891e895c75fcf9ba, type: 3}
   poolSize: 30
 --- !u!4 &1223480936
@@ -3364,6 +3355,11 @@ MonoBehaviour:
   pWeapons: []
   primary: {fileID: 169040326}
   secondary: {fileID: 543724043}
+--- !u!4 &1802936473 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6148279624624607965, guid: 628db37e523d92147832339c3cfb4886, type: 3}
+  m_PrefabInstance: {fileID: 8572397362703676828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1914859276
 GameObject:
   m_ObjectHideFlags: 0
@@ -3521,17 +3517,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7492711188351623103, guid: a0128d8e4ce460242936be9d9cf7c32d, type: 3}
   m_PrefabInstance: {fileID: 5429010921030556515}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2005686757 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1005178660043316300, guid: a0128d8e4ce460242936be9d9cf7c32d, type: 3}
-  m_PrefabInstance: {fileID: 5429010921030556515}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5714f97929e2c4744b6975d7ee061deb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2062565161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3622,6 +3607,10 @@ PrefabInstance:
     - target: {fileID: 1088955837556135256, guid: a0128d8e4ce460242936be9d9cf7c32d, type: 3}
       propertyPath: m_Name
       value: LaserWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1088955837556135256, guid: a0128d8e4ce460242936be9d9cf7c32d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7492711188351623103, guid: a0128d8e4ce460242936be9d9cf7c32d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3914,7 +3903,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 543724044}
     m_Modifications:
     - target: {fileID: 2529208479001302496, guid: 628db37e523d92147832339c3cfb4886, type: 3}
       propertyPath: m_Name
@@ -3993,4 +3982,3 @@ SceneRoots:
   - {fileID: 19227439}
   - {fileID: 7006953409083113252}
   - {fileID: 6440531231000728492}
-  - {fileID: 8572397362703676828}

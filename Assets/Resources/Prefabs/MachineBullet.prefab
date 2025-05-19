@@ -176,6 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 16
-  bulletDamage: 0.2
+  bulletDamage: 0.6
   pool: {fileID: 0}
-  lifeTerm: 0
+  lifeTerm: 3

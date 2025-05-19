@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sccpre.cat-gun-icon-png-3931112_0: -3213591339725219465
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

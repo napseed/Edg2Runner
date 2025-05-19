@@ -6,16 +6,14 @@ using UnityEngine;
 /// </summary>
 public class InitManager : MonoBehaviour
 {
-    public BulletPool pool;
-    public WeaponDefault weaponDefault;
-    public WeaponLaser weaponLaser;
+    public BulletPool Dpool;
+    public BulletPool Mpool;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        pool.InitPool();
-        weaponDefault.InitWeapon();
-        weaponLaser.InitWeapon();
+        Dpool.InitPool();
+        Mpool.InitPool();
     }
 
     // Update is called once per frame

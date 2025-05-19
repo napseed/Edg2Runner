@@ -101,8 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef2891494ae40a40b2584dde35a4e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 3773547917338088312, guid: d4a3ffab4a1fbf24b991a1e45c4fb9a3, type: 3}
   fireTerm: 0.48
+  targetPoolID: D
   pool: {fileID: 0}
   firePos: {fileID: 6123235877540179800}
   fireSfx: {fileID: 11400000, guid: e1e8df1c3920cd74c9aca8ca9ba8bdf0, type: 2}
