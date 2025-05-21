@@ -66,6 +66,7 @@
     <Compile Include="Assets\Resources\Scripts\Objects\Mover.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\FPS.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\SlideButton.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\ActivateWeaponButtons.cs" />
     <Compile Include="Assets\Resources\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\WeaponLaser.cs" />
     <Compile Include="Assets\Resources\Scripts\Stages\Stage1.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Resources\Scripts\Player\PlayerShooter.cs" />
     <Compile Include="Assets\Resources\Scripts\Objects\KillZone.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\InitManager.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\HiddenButtons.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\WeaponDefault.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\WeaponMachine.cs" />
