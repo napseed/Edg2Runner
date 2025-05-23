@@ -38,6 +38,7 @@ public class WeaponMachine : PlayerWeapon
     private void OnEnable()
     {
         pool.OnBulletPoolInit += AssignPool;
+        InitWeapon();
     }
 
     private void OnDisable()
@@ -47,9 +48,9 @@ public class WeaponMachine : PlayerWeapon
 
     void AssignPool(BulletPool pl)
     {
-        Debug.Log($"{gameObject.name} TryAssignPool 호출됨");
-        Debug.Log($"  - 내가 원하는 ID : '{targetPoolID}'");
-        Debug.Log($"  - 전달된 풀 ID   : '{pl.poolID}'");
+        //Debug.Log($"{gameObject.name} TryAssignPool 호출됨");
+        //Debug.Log($"  - 내가 원하는 ID : '{targetPoolID}'");
+        //Debug.Log($"  - 전달된 풀 ID   : '{pl.poolID}'");
 
         if (pl.poolID == targetPoolID)
         {

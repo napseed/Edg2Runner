@@ -28,7 +28,7 @@ public class BulletDefault : PlayerBullet
 
     void ReturnToPool()
     {
-        Debug.Log("기본 총알을 풀로 복구");
+        //Debug.Log("기본 총알을 풀로 복구");
         pool.ReturnBullet(gameObject);
     }
 

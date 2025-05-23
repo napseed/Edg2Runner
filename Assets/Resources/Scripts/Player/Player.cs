@@ -156,6 +156,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
+        Debug.Log($"Jump() called at velocityY={rigid.linearVelocityY}, force={jumpForce}");
         rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         jumpCount++;
     }

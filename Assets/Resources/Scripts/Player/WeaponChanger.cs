@@ -8,37 +8,43 @@ using UnityEngine;
 /// </summary>
 public class WeaponChanger : MonoBehaviour
 {
-    public List<GameObject> pWeapons = new List<GameObject>();
+    public GameObject[] primaries;
+    public GameObject[] secondaries;
 
-    public GameObject primary;
-    public GameObject secondary;
+    public GameObject primaryNow;
+    public GameObject secondaryNow;
 
-    public void Init()
-    {
+    public BulletPool dPool;
+    public BulletPool mPool;
 
-    }
+    public int primNum;
+    public int secNum;
+    public int DeactiveNum = 999;
 
-    void Update()
+    private void Start()
     {
         
     }
 
-    public void AddWeapon(GameObject weapon)
+    void Update()
     {
-        pWeapons.Add(weapon);
-        return;
+
     }
 
-    public void AttachPrimaryWeapon(GameObject child)
+    public void ActivateWeapon1(int num)
     {
-        child.transform.SetParent(primary.transform);
-        child.transform.localPosition = Vector3.zero;
-        child.transform.localRotation = Quaternion.identity;
+        if (primaryNow != null)
+        {
+            primaryNow.SetActive(false);
+        }
+        primaries[num].SetActive(true);
+        primNum = num;
+        primaryNow = primaries[num];
     }
-    public void AttachSecondaryWeapon(GameObject child)
+
+    public void ActivateWeapon2(int num)
     {
-        child.transform.SetParent(secondary.transform);
-        child.transform.localPosition = Vector3.zero;
-        child.transform.localRotation = Quaternion.identity;
+        secondaryNow.SetActive(false);
+
     }
 }

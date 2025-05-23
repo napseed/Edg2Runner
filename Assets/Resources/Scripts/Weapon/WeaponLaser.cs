@@ -31,6 +31,7 @@ public class WeaponLaser : PlayerWeapon
 
     private void OnEnable()
     {
+        laser.SetActive(false);
         InitWeapon();
     }
 
