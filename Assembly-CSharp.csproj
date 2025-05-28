@@ -73,6 +73,7 @@
     <Compile Include="Assets\Resources\Scripts\Weapon\PlayerWeapon.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\WeaponChanger.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\BulletPool.cs" />
+    <Compile Include="Assets\Resources\Scripts\Objects\EXPitem.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\TerrainManager.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerEdgeCollider.cs" />
     <Compile Include="Assets\Resources\Scripts\Managers\SoundManager.cs" />

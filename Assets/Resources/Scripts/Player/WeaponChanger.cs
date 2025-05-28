@@ -21,6 +21,7 @@ public class WeaponChanger : MonoBehaviour
     public int secNum;
     public int DeactiveNum = 999;
 
+
     private void Start()
     {
         
@@ -44,7 +45,12 @@ public class WeaponChanger : MonoBehaviour
 
     public void ActivateWeapon2(int num)
     {
-        secondaryNow.SetActive(false);
-
+        if (secondaryNow != null)
+        {
+            secondaryNow.SetActive(false);
+        }
+        secondaries[num].SetActive(true);
+        secNum = num;
+        secondaryNow = secondaries[num];
     }
 }

@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
     Player player;
     [SerializeField]
     private float HP = 10.0f;
+    [SerializeField]
+    private float EXP = 0.0f;
 
     public enum JumpState
     {
@@ -156,7 +158,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        Debug.Log($"Jump() called at velocityY={rigid.linearVelocityY}, force={jumpForce}");
+        //Debug.Log($"Jump() called at velocityY={rigid.linearVelocityY}, force={jumpForce}");
         rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         jumpCount++;
     }
@@ -209,7 +211,11 @@ public class Player : MonoBehaviour
 
     }
 
-
+    public void AddExp(float val)
+    {
+        EXP += val;
+        Debug.Log($"Exp is added by {val}. Current exp amount is {EXP}.");
+    }
 
 
 }
