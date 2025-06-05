@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /// <summary>
@@ -44,6 +45,10 @@ public class Player : MonoBehaviour
     private float HP = 10.0f;
     [SerializeField]
     private float EXP = 0.0f;
+    [SerializeField]
+    private float MaxEXP = 0.0f;
+    [SerializeField]
+    private float expMultiplier = 0.0f;
 
     public enum JumpState
     {
@@ -71,6 +76,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int jumpCount = 0;
 
+    public Image expGauge;
 
     private void Awake()
     {
@@ -93,6 +99,7 @@ public class Player : MonoBehaviour
 
         jumpState = JumpState.Landed;
         ResetJump();
+        AdjustEXPGauge();
     }
 
     void Update()
@@ -158,7 +165,6 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        //Debug.Log($"Jump() called at velocityY={rigid.linearVelocityY}, force={jumpForce}");
         rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         jumpCount++;
     }
@@ -214,8 +220,26 @@ public class Player : MonoBehaviour
     public void AddExp(float val)
     {
         EXP += val;
-        Debug.Log($"Exp is added by {val}. Current exp amount is {EXP}.");
+        //Debug.Log($"Exp is added by {val}. Current exp amount is {EXP}.");
+        AdjustEXPGauge();
     }
 
+    public void MaxExpExtend()
+    {
+        MaxEXP *= expMultiplier;
+        Debug.Log("Max exp has been adjusted");
+    }
 
+    public void AdjustEXPGauge()
+    {
+        expGauge.fillAmount = EXP / MaxEXP;
+        if (expGauge.fillAmount >=  1)
+        {
+            Debug.Log("Level UP");
+            // TODO : 시간 정지 후 플레이어 업그레이드 팝업
+            MaxExpExtend();
+            EXP = 0;
+            AdjustEXPGauge();
+        }
+    }
 }

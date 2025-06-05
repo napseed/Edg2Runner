@@ -82,7 +82,6 @@
     <Compile Include="Assets\Resources\Scripts\Weapon\BulletLaser.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\PlayerShooter.cs" />
     <Compile Include="Assets\Resources\Scripts\Objects\KillZone.cs" />
-    <Compile Include="Assets\Resources\Scripts\Managers\InitManager.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\HiddenButtons.cs" />
     <Compile Include="Assets\Resources\Scripts\Weapon\WeaponDefault.cs" />
     <Compile Include="Assets\Resources\Scripts\Player\Player.cs" />

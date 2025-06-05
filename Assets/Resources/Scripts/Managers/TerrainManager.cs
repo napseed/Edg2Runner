@@ -13,12 +13,15 @@ public class TerrainManager : MonoBehaviour
     //float elapsedTime = 0.0f;
     [SerializeField]
     float spawnTerm = 2.0f;
+    [SerializeField]
+    float expTerm = 0.3f;
     public float enemyOffset = 3.5f;
 
     void Start()
     {
-        InvokeRepeating(nameof(SpawnPlane), 0f, spawnTerm);
-        InvokeRepeating(nameof(SpawnEnemy), 0f, spawnTerm);
+        //InvokeRepeating(nameof(SpawnPlane), 0f, spawnTerm);
+        //InvokeRepeating(nameof(SpawnEnemy), 0f, spawnTerm);
+        InvokeRepeating(nameof(SpawnExp), 0f, expTerm);
     }
 
     void Update()
@@ -35,6 +38,11 @@ public class TerrainManager : MonoBehaviour
     void SpawnPlane()
     {
         Instantiate(terrains[0], transform.position, Quaternion.identity);
+    }
+
+    void SpawnExp()
+    {
+        Instantiate(terrains[2], transform.position + new Vector3(0, enemyOffset, 0), Quaternion.identity);
     }
     // 일단 처음은 플레인을 계속 생성하고
     // 모든 플레인은 좌측으로 밀어주면서
