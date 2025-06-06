@@ -77,6 +77,7 @@ public class Player : MonoBehaviour
     private int jumpCount = 0;
 
     public Image expGauge;
+    public GameObject offerPanel;
 
     private void Awake()
     {
@@ -237,9 +238,22 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Level UP");
             // TODO : 시간 정지 후 플레이어 업그레이드 팝업
+            ShowOffer();
             MaxExpExtend();
             EXP = 0;
             AdjustEXPGauge();
         }
+    }
+
+    public void ShowOffer()
+    {
+        Time.timeScale = 0;
+        offerPanel.SetActive(true);
+    }
+
+    public void HideOffer()
+    {
+        offerPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }

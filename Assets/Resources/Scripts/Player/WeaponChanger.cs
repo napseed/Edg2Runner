@@ -21,6 +21,7 @@ public class WeaponChanger : MonoBehaviour
     public int secNum;
     public int DeactiveNum = 999;
 
+    bool bSwitch;
 
     private void Start()
     {
@@ -39,8 +40,15 @@ public class WeaponChanger : MonoBehaviour
             primaryNow.SetActive(false);
         }
         primaries[num].SetActive(true);
+        // 같은 무기로 바꾸면 서로 교환
+        if ((num == secNum) && !bSwitch)
+        {
+            bSwitch = true;
+            ActivateWeapon2(primNum);
+        }
         primNum = num;
         primaryNow = primaries[num];
+        bSwitch = false;
     }
 
     public void ActivateWeapon2(int num)
@@ -50,7 +58,14 @@ public class WeaponChanger : MonoBehaviour
             secondaryNow.SetActive(false);
         }
         secondaries[num].SetActive(true);
+        // 같은 무기로 바꾸면 서로 교환
+        if ((num == primNum) && !bSwitch)
+        {
+            bSwitch = true;
+            ActivateWeapon1(secNum);
+        }
         secNum = num;
         secondaryNow = secondaries[num];
+        bSwitch = false;
     }
 }
