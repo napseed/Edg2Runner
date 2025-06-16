@@ -248,6 +248,7 @@ public class Player : MonoBehaviour
     public void ShowOffer()
     {
         Time.timeScale = 0;
+        // 여기에 트랜지션 애니메이션
         offerPanel.SetActive(true);
     }
 

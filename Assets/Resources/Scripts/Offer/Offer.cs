@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Offer : MonoBehaviour
 {
@@ -9,10 +10,36 @@ public class Offer : MonoBehaviour
         Weaponizer,
         Windmill,
         amada,
-        corp1,
-        corp2,
+        TriChrome,
+        ZETA,
+        etc,
     }
 
-    public company co;
+    protected company co;
 
+    public OfferPanel oPanel;
+    public Sprite sprite;
+    public Player player;
+
+    private void OnEnable()
+    {
+        
+    }
+
+    public void OfferFuction()
+    {
+        oPanel.ChangeSprite(sprite);
+        oPanel.activatedOffer = this;
+        oPanel.ShowConfirm();
+    }
+
+    public virtual void OfferUpgrade()
+    {
+        return;
+    }
+
+    public void EndOffer()
+    {
+        player.HideOffer();
+    }
 }
