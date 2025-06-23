@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Offer
+  m_EditorClassIdentifier: 
+  m_GroupName: Offer
+  m_GUID: 183f5c21f12797d41b392bd7fb43e18e
+  m_SerializeEntries:
+  - m_GUID: 039f2c6bd9d89ce489f13752ecc14b48
+    m_Address: Prefabs/Offers/TriOffer01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - OfferGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45bf71808a00e214c93178f68a9c8a32
+    m_Address: Prefabs/Offers/WeaOffer01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - OfferGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53e29bfdff8a30f488d9190e4597e574
+    m_Address: Prefabs/Offers/AmaOffer01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - OfferGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5dcaa53fd7fd8f047946b7cd9a5c61d7
+    m_Address: Prefabs/Offers/OhkOffer01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - OfferGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af5339358bb65624ba4bf92472e211c0
+    m_Address: Prefabs/Offers/SofOffer01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - OfferGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c29481fe81f9628428c5b8e46f77e65a
+    m_Address: Prefabs/Offers/WinOffer01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - OfferGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2debb3c0e96d254bb5c372e83db5284
+    m_Address: Prefabs/Offers/ZetOffer01
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - OfferGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4364536cdef67d148a0f0187ecd5e008, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3476364d6700c4a4584c70155d743dc5, type: 2}
+    - {fileID: 11400000, guid: f23b0742553e33e4eb355a5b7db2374a, type: 2}

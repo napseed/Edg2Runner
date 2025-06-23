@@ -40,6 +40,7 @@ public class Offer : MonoBehaviour
 
     public void EndOffer()
     {
+        
         player.HideOffer();
     }
 }

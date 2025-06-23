@@ -65,6 +65,7 @@
     <Compile Include="Assets\Resources\Scripts\Weapon\BulletDefault.cs" />
     <Compile Include="Assets\Resources\Scripts\Objects\Mover.cs" />
     <Compile Include="Assets\Resources\Scripts\Offer\SofiaOffer.cs" />
+    <Compile Include="Assets\Resources\Scripts\Objects\PrefLoader.cs" />
     <Compile Include="Assets\Resources\Scripts\Offer\TrichromeOffer.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\FPS.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\SlideButton.cs" />
