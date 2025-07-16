@@ -148,3 +148,4 @@ MonoBehaviour:
   oPanel: {fileID: 0}
   sprite: {fileID: 0}
   player: {fileID: 0}
+  icon: {fileID: -4775144764755976017, guid: 4516c003796ca494fb2002fee814e247, type: 3}

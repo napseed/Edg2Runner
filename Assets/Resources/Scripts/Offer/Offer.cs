@@ -20,6 +20,7 @@ public class Offer : MonoBehaviour
     public OfferPanel oPanel;
     public Sprite sprite;
     public Player player;
+    public Sprite icon;
 
     private void OnEnable()
     {

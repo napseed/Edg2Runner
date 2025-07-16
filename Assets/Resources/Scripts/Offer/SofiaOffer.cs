@@ -21,4 +21,5 @@ public class SofiaOffer : Offer
         // DO UPGRADE
         EndOffer();
     }
+
 }

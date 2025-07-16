@@ -33,9 +33,13 @@ public class OfferPanel : MonoBehaviour
     // 수락 후 적용된 오퍼 리스트... 필요한가?
     public List<GameObject> appliedOffers = new List<GameObject>();
 
+    public GameObject interfacePanel;
+    PlayerUpgrade pUpgrade;
+
     private void Awake()
     {
         instance = this;
+        pUpgrade = GetComponent<PlayerUpgrade>();
         //loadedOffers = loader.GetComponent<PrefLoader>().loadedPrefOffers;
     }
 
@@ -76,6 +80,8 @@ public class OfferPanel : MonoBehaviour
     public void ConfirmOffer()
     {
         activatedOffer.OfferUpgrade();
+        interfacePanel.GetComponent<InterfacePanel>().RegisterUp(activatedOffer.icon);
+
         for (int i = 0; i < oPositions.Length; i++)
         {
             Transform child = oPositions[i].transform.GetChild(0);
