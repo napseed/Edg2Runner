@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      brazilmiku_0: 3725295106988842496
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
